@@ -7,7 +7,8 @@ import random
 import time
 import os
 
-print('PeepingJack 1.3')
+
+print('PeepingJack 1.4')
 audience = input('Show just games in lobbies? (y or n, defaults to y): ')
 
 if audience == "n" or audience == "N":

@@ -51,7 +51,7 @@ def checkcode(code):
 
         if audience == True:
             # If user wants lobbies only
-            if r.json()["joinAs"] != "audience":
+            if r.json()["joinAs"] != "audience" and r.json()["joinAs"] != "full":
                 # Lobby game
                 stats["lobbies"] += 1
                 stats["valid"].append(code) # Write code to list

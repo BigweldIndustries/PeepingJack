@@ -7,11 +7,10 @@ import random
 import time
 import os
 
-
 print('PeepingJack 1.3')
 audience = input('Show just games in lobbies? (y or n, defaults to y): ')
 
-if audience.lower() == "n":
+if audience == "n" or audience == "N":
     audience = False
 else:
     audience = True
@@ -38,7 +37,7 @@ def checkcode(code):
     global stats
 
     # Check code
-    r = requests.get(f'https://ecast.jackboxgames.com/api/v2/rooms/{code}')
+    r = requests.get(f'https://blobcast.jackboxgames.com/room/{code}')
     stats["checked"] += 1
 
     if r.status_code == 404:
@@ -51,7 +50,7 @@ def checkcode(code):
 
         if audience == True:
             # If user wants lobbies only
-            if r.json()["body"]["audienceEnabled"] == False:
+            if r.json()["joinAs"] != "audience":
                 # Lobby game
                 stats["lobbies"] += 1
                 stats["valid"].append(code) # Write code to list

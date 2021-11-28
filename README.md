@@ -12,7 +12,7 @@ Probably adding a proper GUI
 1. Install python, https://python.org/downloads
 
 2. Install dependencies
-Run ``pip install futures itertools requests``
+Run ``pip install futures itertools requests webdriver-manager``
 
 3. Download repository and unzip into a folder
 

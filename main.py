@@ -11,6 +11,11 @@ import random
 import time
 import os
 
+def clear():
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
 
 print('PeepingJack 1.4')
 username = input("Username: ")
@@ -76,6 +81,7 @@ def checkcode(code):
 def statsUpdate():
     # Prints stats
     while numopen > stats["lobbies"]:
+        clear()
         print(f'All Valid: {stats["good"]}, Lobbies: {stats["lobbies"]}, Checked: {stats["checked"]}\n\n\nCodes:\n{stats["valid"]}\n\n')
         time.sleep(0.1)
 

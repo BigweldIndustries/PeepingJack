@@ -1,7 +1,6 @@
 # Import requirements
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.utils import ChromeType
 from string import ascii_uppercase
 from selenium import webdriver
 from itertools import product
@@ -72,7 +71,7 @@ def checkcode(code):
                 # Lobby game
                 stats["lobbies"] += 1
                 stats["valid"].append(code) # Write code to list
-                driver.execute_script('''let win'''+tempc+''' = window.open("'''+url+'''","_blank");''') # Open game in new tab
+                driver.execute_script('let win'+tempc+' = window.open("'+url+'","_blank");') # Open game in new tab
                 
     else:
         pass
